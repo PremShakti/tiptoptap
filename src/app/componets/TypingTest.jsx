@@ -132,7 +132,7 @@ export default function TypingTest({ words,wordsNo }) {
   }, [errors, typedText]);
 
   return (
-    <div>
+    <div  >
       {isLocked ? (
         <ShiningEffect laters={totalLater} errors={errors} acuracy={accuracy} speed={typedText.split(" ").length} />
       ) : (

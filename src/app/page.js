@@ -131,7 +131,7 @@ export default function Home() {
   return (
     <main>
       {/* <TypingTest words={words} time={60} wordsNo={50} /> */}
-      <AlagHai words={words} wordsNo={50}  />
+      <AlagHai words={words} wordsNo={50} time={1} width={"50%"} />
     </main>
   );
 }

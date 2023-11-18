@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./mainlogic.css";
-function AlagHai({ words, wordsNo }) {
+function AlagHai({ words, wordsNo,time,width }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const [inputValuetwo, setInputValuetwo] = useState(0);
@@ -10,7 +10,8 @@ function AlagHai({ words, wordsNo }) {
   const [accuracyF, setAccuracyF] = useState(0);
   const [wordsList, setText] = useState([]);
   const [wpmr,setwpmr]=useState(0)
-  const [seconds, setSeconds] = useState(60);
+  const [seconds, setSeconds] = useState(time*60);
+  const [timeStart,setTimeStart]=useState(false)
   const inputRef = useRef(null);
 
 
@@ -120,7 +121,16 @@ if(inputValuetwo){
 
 
 }
+useEffect(()=>{
+  if(inputValue||inputValuetwo){
+
+    setTimeStart(true)
+  }
+},[inputValue,inputValuetwo])
+
 useEffect(() => {
+
+  if(timeStart){
   const interval = setInterval(() => {
     if (seconds > 0) {
       setSeconds(seconds - 1);
@@ -134,11 +144,13 @@ useEffect(() => {
 
 
     }
-  }, 1000);
+  },1000);
 
   // Clear interval on component unmount to avoid memory leaks
   return () => clearInterval(interval);
-}, [seconds]);
+  }
+
+}, [seconds,timeStart,time]);
 
 
 
@@ -146,9 +158,9 @@ useEffect(() => {
   
  
   return (
-    <div>
+    <div >
       <div>
-        <div className="paragraphmain">{renderParagraph()}</div>
+        <div style={{width:width}} className="paragraphmain">{renderParagraph()}</div>
         <div className="flex justify-center gap-[20px] ">
           {" "}
           <p className="text-[red]">Error count: {errorCount}</p>

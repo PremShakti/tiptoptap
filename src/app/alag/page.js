@@ -9,7 +9,7 @@ const Alag = () => {
 
   return (
     <div>
-      <AlagHai words={words} wordsNo={5} />
+      <AlagHai words={words} wordsNo={5} time={5}/>
     </div>
   );
 };
