@@ -31,7 +31,7 @@ const Header = () => {
            
           
 
-          <h1 className=" text-[1em] md:text-3xl">Typo-Champ</h1>
+          <h1 className=" text-[1em] md:text-3xl"><Link href={"/"} >Typo-Champ</Link> </h1>
           <div className="flex  items-center gap-[50px] ">
             <Link href={"/practice/1"}>Practice</Link>
             <Link href={"/alag"}>Game </Link>
