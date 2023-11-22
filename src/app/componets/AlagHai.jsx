@@ -2,8 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./mainlogic.css";
 
-
-function AlagHai({ words, wordsNo,time,width }) {
+function AlagHai({ words, wordsNo, time, width }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [inputValue, setInputValue] = useState("");
   const [inputValuetwo, setInputValuetwo] = useState(0);
@@ -11,12 +10,10 @@ function AlagHai({ words, wordsNo,time,width }) {
   const [typedIninputbox, setBoxtyped] = useState(0);
   const [accuracyF, setAccuracyF] = useState(0);
   const [wordsList, setText] = useState([]);
-  const [wpmr,setwpmr]=useState(0)
-  const [seconds, setSeconds] = useState(time*60);
-  const [timeStart,setTimeStart]=useState(false)
+  const [wpmr, setwpmr] = useState(0);
+  const [seconds, setSeconds] = useState(time * 60);
+  const [timeStart, setTimeStart] = useState(false);
   const inputRef = useRef(null);
-
-
 
   const regeneratrewords = () => {
     let paragraph = "";
@@ -111,68 +108,71 @@ function AlagHai({ words, wordsNo,time,width }) {
     setAccuracyF(accuracyFinal.toFixed(1));
   };
 
-const handleWpm=()=>{
-
-if(inputValuetwo){
-  const wpm=Math.round(inputValuetwo/1)
-  setwpmr(wpm)
-}else{
-  const wp=Math.round(inputValue.split(" ").length/1)
-  setwpmr(wp)
-}
-
-
-}
-useEffect(()=>{
-  if(inputValue||inputValuetwo){
-
-    setTimeStart(true)
-  }
-},[inputValue,inputValuetwo])
-
-useEffect(() => {
-
-  if(timeStart){
-  const interval = setInterval(() => {
-    if (seconds > 0) {
-      setSeconds(seconds - 1);
-      
+  const handleWpm = () => {
+    if (inputValuetwo) {
+      const wpm = Math.round(inputValuetwo / 1);
+      setwpmr(wpm);
     } else {
-      clearInterval(interval);
-      // Add any logic you want to execute when the timer reaches zero
-      console.log('Timer reached zero!');
-      handleWpm();
-      handleAccuracy()
-
-
+      const wp = Math.round(inputValue.split(" ").length / 1);
+      setwpmr(wp);
     }
-  },1000);
+  };
+  useEffect(() => {
+    if (inputValue || inputValuetwo) {
+      setTimeStart(true);
+    }
+  }, [inputValue, inputValuetwo]);
 
-  // Clear interval on component unmount to avoid memory leaks
-  return () => clearInterval(interval);
+  useEffect(() => {
+    if (timeStart) {
+      const interval = setInterval(() => {
+        if (seconds > 0) {
+          setSeconds(seconds - 1);
+        } else {
+          clearInterval(interval);
+          // Add any logic you want to execute when the timer reaches zero
+          console.log("Timer reached zero!");
+          handleWpm();
+          handleAccuracy();
+        }
+      }, 1000);
+
+      // Clear interval on component unmount to avoid memory leaks
+      return () => clearInterval(interval);
+    }
+  }, [seconds, timeStart, time]);
+
+  // margin: auto;
+  //     margin-top: 20px;
+  //     padding: 15px;
+  //     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  //     font-size: 1.9em;
+  //   font-weight: bold;
+  //   background: #ffffff;
+  //   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  //   border-radius: 10px;
+  //   letter-spacing: 2px;
+  //  font-variant: inherit;
+
+  const paragraphStyles = {
+    width: "50%",
+  };
+
+  const mediaQueryStyles = `
+  @media screen and (max-width: 900px) {
+    width: '100%',
   }
+`;
 
-}, [seconds,timeStart,time]);
-
-
-// margin: auto;
-//     margin-top: 20px;
-//     padding: 15px;
-//     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-//     font-size: 1.9em;
-//   font-weight: bold;
-//   background: #ffffff;
-//   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
-//   border-radius: 10px;
-//   letter-spacing: 2px;
-//  font-variant: inherit;
-
-  
- 
   return (
-    <div >
+    <div>
       <div>
-        <div className={`m-[auto] mt-[20px] w-[95%] md:w-[${width}] p-[15px] text-[1.1em] md:text-[1.9em] font-bold bg-[#ffffff] rounded-[15px] shadow-lg `}>{renderParagraph()}</div>
+        <div
+       
+          className={`w-[95%] md:w-[${width}] m-[auto] mt-[20px]  p-[15px] text-[1.1em] md:text-[1.9em] font-bold bg-[#ffffff] rounded-[15px] shadow-lg` }
+        >
+          {renderParagraph()}
+        </div>
         <div className="flex justify-center gap-[20px] ">
           {" "}
           <p className="text-[red]">Error count: {errorCount}</p>
