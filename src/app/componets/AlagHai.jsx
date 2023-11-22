@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./mainlogic.css";
+
+
 function AlagHai({ words, wordsNo,time,width }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [inputValue, setInputValue] = useState("");
@@ -153,14 +155,24 @@ useEffect(() => {
 }, [seconds,timeStart,time]);
 
 
-
+// margin: auto;
+//     margin-top: 20px;
+//     padding: 15px;
+//     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+//     font-size: 1.9em;
+//   font-weight: bold;
+//   background: #ffffff;
+//   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+//   border-radius: 10px;
+//   letter-spacing: 2px;
+//  font-variant: inherit;
 
   
  
   return (
     <div >
       <div>
-        <div style={{width:width}} className="paragraphmain">{renderParagraph()}</div>
+        <div className={`m-[auto] mt-[20px] w-[95%] md:w-[${width}] p-[15px] text-[1.1em] md:text-[1.9em] font-bold bg-[#ffffff] rounded-[15px] shadow-lg `}>{renderParagraph()}</div>
         <div className="flex justify-center gap-[20px] ">
           {" "}
           <p className="text-[red]">Error count: {errorCount}</p>

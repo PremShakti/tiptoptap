@@ -1,10 +1,8 @@
 .paragraphmain{
-    
-    
     margin: auto;
     margin-top: 20px;
     padding: 15px;
-    font-family: sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.9em;
   font-weight: bold;
   background: #ffffff;
@@ -12,5 +10,20 @@
   border-radius: 10px;
   letter-spacing: 2px;
  font-variant: inherit;
+}
+@media screen and (max-width: 850px) {
+  .paragraphmain{
+    margin: auto;
+    margin-top: 20px;
+    padding: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+  font-weight: bold;
+  background: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  border-radius: 10px;
+  letter-spacing: 2px;
+ font-variant: inherit;
+}
   
 }
