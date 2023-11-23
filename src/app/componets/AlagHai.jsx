@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import "./mainlogic.css";
+import Keyboard from "./Keyboard";
 
 function AlagHai({ words, wordsNo, time, width }) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -154,24 +155,36 @@ function AlagHai({ words, wordsNo, time, width }) {
   //   letter-spacing: 2px;
   //  font-variant: inherit;
 
-  const paragraphStyles = {
-    width: "50%",
-  };
+//   const paragraphStyles = {
+//     width: "50%",
+//   };
 
-  const mediaQueryStyles = `
-  @media screen and (max-width: 900px) {
-    width: '100%',
-  }
-`;
+//   const mediaQueryStyles = `
+//   @media screen and (max-width: 900px) {
+//     width: '100%',
+//   }
+// `;
+const cssfordiv={
+ ll: `w-[95%] md:w-[${width}] m-[auto] mt-[20px]  p-[15px] text-[1.1em] md:text-[1.9em] font-bold bg-[#ffffff] rounded-[15px] shadow-lg relative`
+}
 
   return (
     <div>
       <div>
         <div
        
-          className={`w-[95%] md:w-[${width}] m-[auto] mt-[20px]  p-[15px] text-[1.1em] md:text-[1.9em] font-bold bg-[#ffffff] rounded-[15px] shadow-lg` }
+          className={ cssfordiv.ll}
         >
           {renderParagraph()}
+         
+          <textarea
+            className="absolute p-[15px] top-0 left-0 opacity-0 w-[100%] border border-[red] h-[100%]"
+            ref={inputRef}
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="Start typing..."
+          />
+       
         </div>
         <div className="flex justify-center gap-[20px] ">
           {" "}
@@ -183,7 +196,7 @@ function AlagHai({ words, wordsNo, time, width }) {
           </p>
         </div>
 
-        <div className="absolute bottom-0 left-[-100px] w-[5px] border border-[red] h-[5px]">
+        {/* <div className="absolute  w-[100%] border border-[red] h-[5px]">
           <textarea
             className=" w-[5px] border border-[red] h-[5px] "
             ref={inputRef}
@@ -191,8 +204,9 @@ function AlagHai({ words, wordsNo, time, width }) {
             onChange={(e) => setInputValue(e.target.value)}
             placeholder="Start typing..."
           />
-        </div>
+        </div> */}
       </div>
+      {/* <Keyboard/> */}
     </div>
   );
 }
