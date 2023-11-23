@@ -7,7 +7,7 @@ const bodyTouch=()=>{
 }
   return (
     <div
-      className={` w-64 bg-[#05E4FF] text-white h-full absolute top-[70px] left-0 transform transition-transform ease-in-out ${
+      className={` w-64 bg-[#05E4FF] z-50 text-white h-full absolute top-[70px] left-0 transform transition-transform ease-in-out ${
         open ? "translate-x-0" : "-translate-x-full"
       }`}
     >
