@@ -14,9 +14,9 @@ const Resule = ({params}) => {
 
 const sswords=()=>{
   if(params.lession=="1"){
-   return ["asd","asd","gh","jkl;","aj","lkj","lkja","ghjk","asdf","jklgh","lkjhg","fdsa","fdsa"]
+   return ["asd","asd","gh","jkl"]
   }else if(params.lession=="2"){
-    return ["ajsk","jakd","hgas;","lkds;","ghfak","salj;","fhkla","lkag';","hgkla';","dhl","kdsl;"]
+    return ["ajsk","jakd","hgas;","lkds;","ghfak","salj;","fhkla","lkag';","hgkla';","dhla","kdsl;"]
 
   }else if(params.lession=="3"){
     return ["ajskt","jaedoe","heoas;","lkdsoe;","ghfak","stilj;","fhkla","lkagti","hgkla","dhitl","kdsoel"]
@@ -34,7 +34,7 @@ const sswords=()=>{
 
   return (
     <div>
-       <AlagHai words={sswords()}  wordsNo={10} time={1} width={"90%"} />
+       <AlagHai words={sswords()}  wordsNo={18} time={1} width={false} />
     </div>
   )
 }

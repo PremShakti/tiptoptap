@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Header = () => {
   const [open, setOpen] = useState(false);
  
-
+  // bg-blue-500
 
 
   const handleOp = () => {
@@ -15,7 +15,7 @@ const Header = () => {
   };
   return (
     <>
-      <header className="bg-blue-500 p-4 text-white font-bold h-[70px]">
+      <header className="bg- bg-blue-500 p-4 text-white font-bold h-[70px]">
         <SideTogalbar open={open} handleOp={handleOp} />
         <div className="flex justify-between ">
        
