@@ -1,33 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![FireShot Capture 009 - Create Next App - tiptoptap vercel app](https://github.com/PremShakti/tiptoptap/assets/112472700/f30f5501-d068-47b8-b796-fab3eb266165)
 
-## Getting Started
+Introducing Typo Champ, the ultimate destination for honing your typing skills and becoming a master of precision in keystrokes. With Typo Champ, embark on an exhilarating journey towards typing proficiency in a fun and interactive way.
 
-First, run the development server:
+Immerse yourself in a captivating environment designed to enhance your typing abilities, whether you're a beginner aiming to improve accuracy or a seasoned typist striving for perfection. Our user-friendly interface provides a seamless experience, making it effortless to navigate through various exercises and challenges.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Challenge yourself with an array of engaging typing exercises tailored to suit your skill level. From simple sentences to complex passages, Typo Champ offers a diverse range of content to keep you motivated and challenged. Track your progress over time and witness firsthand as your typing speed and accuracy soar to new heights.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+But Typo Champ is more than just a platform for practice; it's a community of like-minded individuals passionate about mastering the art of typing. Connect with fellow typists, share tips and tricks, and participate in friendly competitions to push yourself further.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Whether you're aiming to boost productivity, enhance your communication skills, or simply enjoy the satisfaction of typing with precision, Typo Champ is here to support you every step of the way. Join us today and embark on your journey to becoming a Typo Champ!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
